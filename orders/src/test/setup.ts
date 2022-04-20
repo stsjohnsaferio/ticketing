@@ -38,10 +38,11 @@ beforeEach(async ()=>{
   }
 })
 
-// afterAll(async()=>{
-//   await mongo.stop()
-//   await mongoose.connection.close();
-// }, 30000)
+afterAll(done => {
+  // Closing the DB connection allows Jest to exit successfully.
+  mongoose.connection.close()
+  done()
+})
 
 global.signin = () => {
   //Build a JWT payload {id, email}

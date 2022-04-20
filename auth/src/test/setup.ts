@@ -38,6 +38,12 @@ beforeEach(async ()=>{
 //   await mongoose.connection.close();
 // }, 30000)
 
+afterAll(done => {
+  // Closing the DB connection allows Jest to exit successfully.
+  mongoose.connection.close()
+  done()
+})
+
 global.signIn =async () => {
   const email = "span@test.com"
   const password = "India@123"
