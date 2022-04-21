@@ -5,8 +5,7 @@ export default ({ req }) => {
     // We are on the server
     try {
       return axios.create({
-        baseURL:
-          'http://ingress-nginx-controller.ingress-nginx.svc.cluster.local/',
+        baseURL: 'http://www.expressefile.net/',
         headers: req.headers,
       });
     } catch (error) {
