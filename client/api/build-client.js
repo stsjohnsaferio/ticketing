@@ -5,8 +5,7 @@ export default ({ req }) => {
     // We are on the server
     try {
       return axios.create({
-        baseURL:
-          'http://www.expressefile.net/',
+        baseURL: 'http://www.expressefile.net/',
         headers: req.headers,
       });
     } catch (error) {
